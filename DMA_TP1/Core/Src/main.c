@@ -1,4 +1,4 @@
-// Include
+// Includes
 #include <stdint.h>
 #include <stm32f446xx.h>
 #include <stdio.h>
@@ -8,7 +8,8 @@
 #include "dma.h"
 
 // Global variables
-uint8_t table0[TABLE0_SIZE] = "HELLO";
+uint8_t table0[TABLE0_SIZE] = {  0,  1,  2,  3,  4,  5,  6,  7,  8,  9};
+uint8_t table1[TABLE0_SIZE] = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
 
 // Private functions
 int __io_putchar(int ch)

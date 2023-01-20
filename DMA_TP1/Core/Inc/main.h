@@ -17,7 +17,7 @@
 #define BITMASK_4BITS	0b1111
 #define BITMASK_5BITS	0b11111
 
-#define TABLE0_SIZE    5
+#define TABLE0_SIZE    10
 
 #endif
 // End of file

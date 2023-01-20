@@ -20,45 +20,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_it.h"
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-/* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN TD */
-
-/* USER CODE END TD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
-/* USER CODE BEGIN PFP */
-
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/* External variables --------------------------------------------------------*/
-
-/* USER CODE BEGIN EV */
-
-/* USER CODE END EV */
+// Externals variables
+extern uint8_t table0[TABLE0_SIZE];
+extern uint8_t table1[TABLE0_SIZE];
 
 /******************************************************************************/
 /*           Cortex-M4 Processor Interruption and Exception Handlers          */
@@ -208,8 +173,64 @@ void EXTI15_10_IRQHandler(void)   // <----- The ISR Function We're Looking For!
 
 void DMA1_Stream6_IRQHandler(void)
 {
-	DMA1->HIFCR = DMA_HIFCR_CTCIF6 | DMA_HIFCR_CHTIF6 | DMA_HIFCR_CTEIF6 | DMA_HIFCR_CDMEIF6 | DMA_HIFCR_CFEIF6; // clear DMA flags
-	USART2->SR  &= ~(USART_SR_TC); // Clear TC bit
+	// Variable declaration
+	uint8_t index = 0U;
+
+	// Clear DMA IT flags
+	DMA1->HIFCR = DMA_HIFCR_CTCIF6 | DMA_HIFCR_CHTIF6 | DMA_HIFCR_CTEIF6 | DMA_HIFCR_CDMEIF6 | DMA_HIFCR_CFEIF6;
+
+	// Clear USART2 TC bit
+	USART2->SR  &= ~(USART_SR_TC);
+
+	// Check current buffer used by DMA
+	if(DMA_SxCR_CT == (DMA1_Stream6->CR & DMA_SxCR_CT))
+	{
+		// Buffer 1 is used by DMA
+		if(table0[0] >= 240)
+		{
+			// deactivate DMA stream
+		    DMA1_Stream6->CR  &= ~(DMA_SxCR_EN);
+
+			// Reset tables
+			for (index = 0U; index < TABLE0_SIZE; index++)
+			{
+				table0[index] = index;
+				table1[index] = index + 10;
+			}
+		}
+		else
+		{
+			// Update table0
+			for (index = 0U; index < TABLE0_SIZE; index++)
+			{
+				table0[index] = table0[index] + 10;
+			}
+		}
+	}
+	else
+	{
+		// Buffer 0 is used by DMA
+		if(table1[0] >= 240)
+		{
+			// deactivate DMA stream
+		    DMA1_Stream6->CR  &= ~(DMA_SxCR_EN);
+
+			// Reset tables
+			for (index = 0U; index < TABLE0_SIZE; index++)
+			{
+				table1[index] = index;
+				table0[index] = index + 10;
+			}
+		}
+		else
+		{
+			// Update table0
+			for (index = 0U; index < TABLE0_SIZE; index++)
+			{
+				table1[index] = table1[index] + 10;
+			}
+		}
+	}
 }
 /* USER CODE END 1 */
 

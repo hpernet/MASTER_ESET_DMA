@@ -1485,3 +1485,254 @@ localhost:61234: Connection timed out.
 java.lang.Exception: localhost:61234: Connection timed out.
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.ui 4 4 2023-01-20 09:26:17.655
+!MESSAGE Error
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/DMA_TP1/Core/Inc/dma.c)[368]: java.lang.Exception: Resource '/DMA_TP1/Core/Inc/dma.c' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:330)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:204)
+	at org.eclipse.core.internal.resources.Resource.findMarkers(Resource.java:989)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.openErrorInEditor(BuildConsolePage.java:605)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.showError(BuildConsolePage.java:576)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.setDocument(BuildConsolePage.java:166)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.lambda$1(BuildConsolePage.java:186)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2023-01-20 09:26:17.655
+!MESSAGE Resource '/DMA_TP1/Core/Inc/dma.c' does not exist.
+!STACK 0
+java.lang.Exception: Resource '/DMA_TP1/Core/Inc/dma.c' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:330)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:204)
+	at org.eclipse.core.internal.resources.Resource.findMarkers(Resource.java:989)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.openErrorInEditor(BuildConsolePage.java:605)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.showError(BuildConsolePage.java:576)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.setDocument(BuildConsolePage.java:166)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.lambda$1(BuildConsolePage.java:186)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:27:58.359
+!MESSAGE ContextManager.reportStatus(): Context for Session 26 (org.eclipse.cdt.dsf.gdb)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:28:01.309
+!MESSAGE ContextManager.reportStatus(): Context for Session 26 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:28:01.443
+!MESSAGE ContextManager.reportStatus(): Context for Session 26 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:28:03.963
+!MESSAGE ContextManager.reportStatus(): Context for Session 26 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:35:41.566
+!MESSAGE ContextManager.reportStatus(): Context for Session 26 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 2 0 2023-01-20 09:35:42.133
+!MESSAGE ContextManager.reportWarning(): Session for current Context ended
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:36:22.208
+!MESSAGE ContextManager.reportStatus(): Context for Session 28 (org.eclipse.cdt.dsf.gdb)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:36:25.102
+!MESSAGE ContextManager.reportStatus(): Context for Session 28 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:36:25.242
+!MESSAGE ContextManager.reportStatus(): Context for Session 28 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 09:36:48.407
+!MESSAGE ContextManager.reportStatus(): Context for Session 28 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:31:25.711
+!MESSAGE ContextManager.reportStatus(): Context for Session 28 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 2 0 2023-01-20 10:31:26.279
+!MESSAGE ContextManager.reportWarning(): Session for current Context ended
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:31:34.919
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:31:37.791
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:31:37.932
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:04.183
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:09.449
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:15.691
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:16.222
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:17.300
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:17.962
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:22.119
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:22.237
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:24.084
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:24.628
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:26.036
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:26.595
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:36.361
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:36.448
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:32:48.977
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:33:06.530
+!MESSAGE ContextManager.reportStatus(): Context for Session 29 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 2 0 2023-01-20 10:33:07.100
+!MESSAGE ContextManager.reportWarning(): Session for current Context ended
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:33:15.319
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:33:18.101
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:33:18.226
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:33:26.432
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:34:27.935
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:34:28.029
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:34:28.169
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:34:36.052
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:41:27.127
+!MESSAGE ContextManager.reportStatus(): Context for Session 30 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 2 0 2023-01-20 10:41:27.695
+!MESSAGE ContextManager.reportWarning(): Session for current Context ended
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:41:43.120
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:41:45.990
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:41:46.114
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:08.112
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:13.368
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:13.450
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:13.605
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:14.994
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:43.655
+!MESSAGE ContextManager.reportStatus(): Context for Session 31 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 2 0 2023-01-20 10:42:44.225
+!MESSAGE ContextManager.reportWarning(): Session for current Context ended
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:52.034
+!MESSAGE ContextManager.reportStatus(): Context for Session 32 (org.eclipse.cdt.dsf.gdb)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:54.845
+!MESSAGE ContextManager.reportStatus(): Context for Session 32 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:42:54.892
+!MESSAGE ContextManager.reportStatus(): Context for Session 32 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:43:02.542
+!MESSAGE ContextManager.reportStatus(): Context for Session 32 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 1 0 2023-01-20 10:47:00.741
+!MESSAGE ContextManager.reportStatus(): Context for Session 32 (org.eclipse.cdt.dsf.gdb) (repeated)
+
+!ENTRY com.percepio.tracealyzer.ui 2 0 2023-01-20 10:47:01.310
+!MESSAGE ContextManager.reportWarning(): Session for current Context ended
