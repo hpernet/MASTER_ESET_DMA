@@ -299,3 +299,14 @@
 2023-01-12 09:29:31,495 [INFO] ApiDb:447 - User favorites MCUs=[]
 2023-01-12 09:29:31,495 [INFO] ApiDb:443 - Save user favorites file C:\Users\hugop/.stm32cubeide/favorites.boards.txt: 1 item(s)
 2023-01-12 09:29:31,495 [INFO] ApiDb:447 - User favorites Boards=[NUCLEO-F446RE]
+2023-01-12 11:54:14,321 [ERROR] AdobePublisher:183 - Exception while getting the server answer: java.net.SocketTimeoutException: Read timed out
+2023-01-20 08:00:36,980 [INFO] Activator:177 - 
+
+
+2023-01-20 08:00:37,000 [INFO] Activator:178 - !SESSION log4j initialized
+2023-01-20 08:00:43,970 [ERROR] ConfigurationRetriever:139 - IOException on connection: sw-center.st.com
+2023-01-20 08:00:43,970 [ERROR] ConfigurationRetriever:139 - IOException on connection: sw-center.st.com
+2023-01-20 08:00:43,970 [ERROR] ConfigurationRetriever:139 - IOException on connection: sw-center.st.com
+2023-01-20 08:01:07,652 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-01-20 08:01:07,652 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-01-20 08:01:07,652 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.

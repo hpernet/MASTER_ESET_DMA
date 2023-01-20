@@ -1,0 +1,18 @@
+
+#ifndef MAIN_H_
+#define MAIN_H_
+
+	#define INPUT_MODE 	0
+	#define OUTPUT_MODE	1
+	#define ALT_MODE 	2
+	#define ANALOG_MODE	3
+
+	#define BITMASK_1BITS	0b1
+	#define BITMASK_2BITS	0b11
+	#define BITMASK_3BITS	0b111
+	#define BITMASK_4BITS	0b1111
+	#define BITMASK_5BITS	0b11111
+
+#include "stm32f4xx_hal.h"
+
+#endif

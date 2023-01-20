@@ -201,7 +201,17 @@ void SysTick_Handler(void)
 /* USER CODE BEGIN 1 */
 void EXTI15_10_IRQHandler(void)   // <----- The ISR Function We're Looking For!
 {
-	button_is_pressed();
-	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+	EXTI->PR = EXTI_PR_PR13;
+
+    DMA1_Stream6->CR |= (DMA_SxCR_EN); // set EN bit to activate DMA stream
+}
+
+void DMA1_Stream6_IRQHandler(void)
+{
+	DMA1->HIFCR = DMA_HIFCR_CTCIF6 | DMA_HIFCR_CHTIF6 | DMA_HIFCR_CTEIF6 | DMA_HIFCR_CDMEIF6 | DMA_HIFCR_CFEIF6; // clear DMA flags
+	USART2->SR  &= ~(USART_SR_TC); // Clear TC bit
 }
 /* USER CODE END 1 */
+
+// End of file
+

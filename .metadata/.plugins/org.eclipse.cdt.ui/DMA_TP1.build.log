@@ -1,10 +1,10 @@
-09:44:12 **** Incremental Build of configuration Debug for project DMA_TP1 ****
+09:07:32 **** Incremental Build of configuration Debug for project DMA_TP1 ****
 make -j12 all 
 arm-none-eabi-size   DMA_TP1.elf 
    text	   data	    bss	    dec	    hex	filename
-   2444	     20	   1572	   4036	    fc4	DMA_TP1.elf
+   2552	     16	   1568	   4136	   1028	DMA_TP1.elf
 Finished building: default.size.stdout
  
 
-09:44:12 Build Finished. 0 errors, 0 warnings. (took 234ms)
+09:07:32 Build Finished. 0 errors, 0 warnings. (took 235ms)
 

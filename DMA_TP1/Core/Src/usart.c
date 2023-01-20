@@ -14,6 +14,8 @@ void USART2_Init(void){
 	USART2->BRR  = 139;								// 115200 - APB1:16Mhz
 	USART2->CR1 |= USART_CR1_TE | USART_CR1_RE;		// RX-TX
 	USART2->CR1 |= USART_CR1_UE;
+	USART2->SR  &= ~(USART_SR_TC);                  // Clear TC bit
+	USART2->CR3 |= USART_CR3_DMAT;	                // Activate DMA on USART2
 }
 
 

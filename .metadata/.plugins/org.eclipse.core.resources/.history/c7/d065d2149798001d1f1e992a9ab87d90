@@ -1,0 +1,58 @@
+// Include
+#include <stdint.h>
+#include <stm32f446xx.h>
+#include <stdio.h>
+#include "main.h"
+#include "gpio.h"
+#include "usart.h"
+
+// Define
+#define TABLE0_SIZE    10
+
+// Global variables
+uint8_t table0[TABLE0_SIZE] = "HELLO";
+
+// Private functions
+int __io_putchar(int ch)
+{
+	while(((USART2->SR)&= (1<<7))==0);
+	USART2->DR = ch;
+}
+
+// Main
+int main(void)
+{
+	// Initialize peripherals
+	GPIO_Init();
+	USART2_Init();
+
+	RCC->AHB1ENR = RCC_AHB1ENR_DMA1EN;
+    DMA1_Stream6->CR  &= ~(DMA_SxCR_EN);           // deactivate DMA stream for configuration
+    DMA1_Stream6->CR  &= ~(DMA_SxCR_CHSEL);        // clear bits
+    DMA1_Stream6->CR  |=  (DMA_SxCR_CHSEL_2);      // 100 = channel 4
+    DMA1_Stream6->CR  &= ~(DMA_SxCR_PL);           // priority 00 = low
+    DMA1_Stream6->CR  &= ~(DMA_SxCR_PSIZE);        // size 00 = 8bit
+    DMA1_Stream6->CR  |=  (DMA_SxCR_MINC);         // increment memory pointer with each DMA transfer
+    DMA1_Stream6->CR  &= ~(DMA_SxCR_DIR);          // clear bits
+    DMA1_Stream6->CR  |=  (DMA_SxCR_DIR_0);        // 01 = memory-to-peripheral
+    DMA1_Stream6->PAR  =  &USART2->DR;             // peripheral memory address
+    DMA1_Stream6->M0AR =  table0;                  // data memory address
+    DMA1_Stream6->NDTR = ( uint16_t ) TABLE0_SIZE; // number of bytes to transfer
+	USART2->CR3 |= USART_CR3_DMAT;	               // Activate DMA on USART2
+	HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
+
+
+    DMA1_Stream6->CR |= (DMA_SxCR_EN); // set EN bit to activate DMA stream
+
+//    // wait for end of transfer
+//    while ( !(DMA1->HISR & DMA_HISR_TCIF6) ) {}
+//    while ( !(USART2->SR & USART_SR_TC) ) {}
+
+	// Infinite loop
+	while(1)
+	{
+		// Nothing to do
+	}
+}
+
+// End of file
