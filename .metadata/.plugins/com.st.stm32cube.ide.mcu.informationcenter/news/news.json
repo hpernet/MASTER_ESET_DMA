@@ -1,0 +1,12 @@
+data='[ \
+	{ \
+		"image": "news/InfoCenterEntryPoint.png", \
+		"link": "https://wiki.st.com/stm32mcu/wiki/STM32CubeIDE:Introduction_to_STM32CubeIDE", \
+		"caption": "" \
+	}, \
+	{ \
+		"image": "news/MPUOpTree.png", \
+		"link": "", \
+		"caption": "" \
+	} \
+]';

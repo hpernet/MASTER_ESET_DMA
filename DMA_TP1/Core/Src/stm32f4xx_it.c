@@ -168,7 +168,19 @@ void EXTI15_10_IRQHandler(void)   // <----- The ISR Function We're Looking For!
 {
 	EXTI->PR = EXTI_PR_PR13;
 
-    DMA1_Stream6->CR |= (DMA_SxCR_EN); // set EN bit to activate DMA stream
+    DMA1_Stream5->CR |= (DMA_SxCR_EN); // set EN bit to activate DMA stream
+}
+
+void DMA1_Stream5_IRQHandler(void)
+{
+	// Variable declaration
+	uint8_t index = 0U;
+
+	// Clear DMA IT flags
+	DMA1->HIFCR = DMA_HIFCR_CTCIF5 | DMA_HIFCR_CHTIF5 | DMA_HIFCR_CTEIF5 | DMA_HIFCR_CDMEIF5 | DMA_HIFCR_CFEIF5;
+
+	// Clear USART2 TC bit
+	USART2->SR  &= ~(USART_SR_TC);
 }
 
 void DMA1_Stream6_IRQHandler(void)
@@ -182,55 +194,56 @@ void DMA1_Stream6_IRQHandler(void)
 	// Clear USART2 TC bit
 	USART2->SR  &= ~(USART_SR_TC);
 
-	// Check current buffer used by DMA
-	if(DMA_SxCR_CT == (DMA1_Stream6->CR & DMA_SxCR_CT))
-	{
-		// Buffer 1 is used by DMA
-		if(table0[0] >= 240)
-		{
-			// deactivate DMA stream
-		    DMA1_Stream6->CR  &= ~(DMA_SxCR_EN);
-
-			// Reset tables
-			for (index = 0U; index < TABLE0_SIZE; index++)
-			{
-				table0[index] = index;
-				table1[index] = index + 10;
-			}
-		}
-		else
-		{
-			// Update table0
-			for (index = 0U; index < TABLE0_SIZE; index++)
-			{
-				table0[index] = table0[index] + 10;
-			}
-		}
-	}
-	else
-	{
-		// Buffer 0 is used by DMA
-		if(table1[0] >= 240)
-		{
-			// deactivate DMA stream
-		    DMA1_Stream6->CR  &= ~(DMA_SxCR_EN);
-
-			// Reset tables
-			for (index = 0U; index < TABLE0_SIZE; index++)
-			{
-				table1[index] = index;
-				table0[index] = index + 10;
-			}
-		}
-		else
-		{
-			// Update table0
-			for (index = 0U; index < TABLE0_SIZE; index++)
-			{
-				table1[index] = table1[index] + 10;
-			}
-		}
-	}
+//	// Double buffering management
+//	// Check current buffer used by DMA
+//	if(DMA_SxCR_CT == (DMA1_Stream6->CR & DMA_SxCR_CT))
+//	{
+//		// Buffer 1 is used by DMA
+//		if(table0[0] >= 240)
+//		{
+//			// deactivate DMA stream
+//		    DMA1_Stream6->CR  &= ~(DMA_SxCR_EN);
+//
+//			// Reset tables
+//			for (index = 0U; index < TABLE0_SIZE; index++)
+//			{
+//				table0[index] = index;
+//				table1[index] = index + 10;
+//			}
+//		}
+//		else
+//		{
+//			// Update table0
+//			for (index = 0U; index < TABLE0_SIZE; index++)
+//			{
+//				table0[index] = table0[index] + 10;
+//			}
+//		}
+//	}
+//	else
+//	{
+//		// Buffer 0 is used by DMA
+//		if(table1[0] >= 240)
+//		{
+//			// deactivate DMA stream
+//		    DMA1_Stream6->CR  &= ~(DMA_SxCR_EN);
+//
+//			// Reset tables
+//			for (index = 0U; index < TABLE0_SIZE; index++)
+//			{
+//				table1[index] = index;
+//				table0[index] = index + 10;
+//			}
+//		}
+//		else
+//		{
+//			// Update table0
+//			for (index = 0U; index < TABLE0_SIZE; index++)
+//			{
+//				table1[index] = table1[index] + 10;
+//			}
+//		}
+//	}
 }
 /* USER CODE END 1 */
 

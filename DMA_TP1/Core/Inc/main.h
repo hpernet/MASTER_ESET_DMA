@@ -19,5 +19,12 @@
 
 #define TABLE0_SIZE    10
 
+#define BUFFER_SIZE_SINUS 	            16000
+#define AUDIOFREQ_16K 		            ((uint32_t)16000U)  //AUDIOFREQ_16K = 16 Khz
+#define AMPLITUDE			            350
+#define OFFSET                          400
+#define PI					            3.141592
+
+
 #endif
 // End of file

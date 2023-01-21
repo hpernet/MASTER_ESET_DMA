@@ -1,27 +1,139 @@
-10:41:33 **** Incremental Build of configuration Debug for project DMA_TP1 ****
+11:43:25 **** Incremental Build of configuration Debug for project DMA_TP1 ****
 make -j12 all 
-arm-none-eabi-size   DMA_TP1.elf 
-   text	   data	    bss	    dec	    hex	filename
-   2688	     32	   1568	   4288	   10c0	DMA_TP1.elf
-Finished building: default.size.stdout
- 
-10:41:38 **** Incremental Build of configuration Debug for project DMA_TP1 ****
-make -j12 all 
-arm-none-eabi-size   DMA_TP1.elf 
-   text	   data	    bss	    dec	    hex	filename
-   2688	     32	   1568	   4288	   10c0	DMA_TP1.elf
-Finished building: default.size.stdout
- 
-10:42:46 **** Incremental Build of configuration Debug for project DMA_TP1 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:37:2: warning: implicit declaration of function 'DMA_bis_Init'; did you mean 'DMA_Init'? [-Wimplicit-function-declaration]
+   37 |  DMA_bis_Init();
+      |  ^~~~~~~~~~~~
+      |  DMA_Init
+../Core/Src/main.c: In function '__io_putchar':
+../Core/Src/main.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+   21 | }
+      | ^
 arm-none-eabi-gcc -o "DMA_TP1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Users\hugop\Documents\GitHub\STM32\MASTER_ESET_DMA\DMA_TP1\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_TP1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: DMA_TP1.elf
  
 arm-none-eabi-size   DMA_TP1.elf 
 arm-none-eabi-objdump -h -S  DMA_TP1.elf  > "DMA_TP1.list"
    text	   data	    bss	    dec	    hex	filename
-   2748	     32	   1568	   4348	   10fc	DMA_TP1.elf
+   9944	     12	  17572	  27528	   6b88	DMA_TP1.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_TP1.list
+ 
+11:43:38 **** Incremental Build of configuration Debug for project DMA_TP1 ****
+make -j12 all 
+arm-none-eabi-size   DMA_TP1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9944	     12	  17572	  27528	   6b88	DMA_TP1.elf
+Finished building: default.size.stdout
+ 
+11:47:42 **** Incremental Build of configuration Debug for project DMA_TP1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:37:2: warning: implicit declaration of function 'DMA_bis_Init'; did you mean 'DMA_Init'? [-Wimplicit-function-declaration]
+   37 |  DMA_bis_Init();
+      |  ^~~~~~~~~~~~
+      |  DMA_Init
+../Core/Src/main.c: In function '__io_putchar':
+../Core/Src/main.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+   21 | }
+      | ^
+arm-none-eabi-gcc -o "DMA_TP1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Users\hugop\Documents\GitHub\STM32\MASTER_ESET_DMA\DMA_TP1\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_TP1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_TP1.elf
+ 
+arm-none-eabi-size   DMA_TP1.elf 
+arm-none-eabi-objdump -h -S  DMA_TP1.elf  > "DMA_TP1.list"
+   text	   data	    bss	    dec	    hex	filename
+   9944	     12	  17572	  27528	   6b88	DMA_TP1.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_TP1.list
+ 
+11:49:42 **** Incremental Build of configuration Debug for project DMA_TP1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/dma.d" -MT"Core/Src/dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/dma.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+../Core/Src/dma.c: In function 'DMA_Init':
+../Core/Src/dma.c:29:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'volatile uint32_t *' {aka 'volatile long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   29 |     DMA1_Stream6->PAR  =  &USART2->DR;             // peripheral memory address
+      |                        ^
+../Core/Src/dma.c:30:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'int16_t *' {aka 'short int *'} makes integer from pointer without a cast [-Wint-conversion]
+   30 |     DMA1_Stream6->M0AR =  sinusTable;                  // data memory address
+      |                        ^
+../Core/Src/dma.c: In function 'DMA_bis_Init':
+../Core/Src/dma.c:50:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'volatile uint32_t *' {aka 'volatile long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   50 |     DMA1_Stream5->PAR  =  &DAC1->DOR1;             // peripheral memory address
+      |                        ^
+../Core/Src/dma.c:51:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'int16_t *' {aka 'short int *'} makes integer from pointer without a cast [-Wint-conversion]
+   51 |     DMA1_Stream5->M0AR =  sinusTable;              // data memory address
+      |                        ^
+../Core/Src/stm32f4xx_it.c: In function 'DMA1_Stream5_IRQHandler':
+../Core/Src/stm32f4xx_it.c:177:10: warning: unused variable 'index' [-Wunused-variable]
+  177 |  uint8_t index = 0U;
+      |          ^~~~~
+../Core/Src/stm32f4xx_it.c: In function 'DMA1_Stream6_IRQHandler':
+../Core/Src/stm32f4xx_it.c:189:10: warning: unused variable 'index' [-Wunused-variable]
+  189 |  uint8_t index = 0U;
+      |          ^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:37:2: warning: implicit declaration of function 'DMA_bis_Init'; did you mean 'DMA_Init'? [-Wimplicit-function-declaration]
+   37 |  DMA_bis_Init();
+      |  ^~~~~~~~~~~~
+      |  DMA_Init
+../Core/Src/main.c: In function '__io_putchar':
+../Core/Src/main.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+   21 | }
+      | ^
+arm-none-eabi-gcc -o "DMA_TP1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Users\hugop\Documents\GitHub\STM32\MASTER_ESET_DMA\DMA_TP1\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_TP1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_TP1.elf
+ 
+arm-none-eabi-size   DMA_TP1.elf 
+arm-none-eabi-objdump -h -S  DMA_TP1.elf  > "DMA_TP1.list"
+   text	   data	    bss	    dec	    hex	filename
+  10024	     12	  33572	  43608	   aa58	DMA_TP1.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_TP1.list
+ 
+11:50:58 **** Incremental Build of configuration Debug for project DMA_TP1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/dma.d" -MT"Core/Src/dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/dma.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/dma.c: In function 'DMA_Init':
+../Core/Src/dma.c:29:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'volatile uint32_t *' {aka 'volatile long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   29 |     DMA1_Stream6->PAR  =  &USART2->DR;             // peripheral memory address
+      |                        ^
+../Core/Src/dma.c:30:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'uint16_t *' {aka 'short unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   30 |     DMA1_Stream6->M0AR =  sinusTable;                  // data memory address
+      |                        ^
+../Core/Src/dma.c: In function 'DMA_bis_Init':
+../Core/Src/dma.c:50:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'volatile uint32_t *' {aka 'volatile long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   50 |     DMA1_Stream5->PAR  =  &DAC1->DHR12R1;             // peripheral memory address
+      |                        ^
+../Core/Src/dma.c:51:24: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'uint16_t *' {aka 'short unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   51 |     DMA1_Stream5->M0AR =  sinusTable;              // data memory address
+      |                        ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:37:2: warning: implicit declaration of function 'DMA_bis_Init'; did you mean 'DMA_Init'? [-Wimplicit-function-declaration]
+   37 |  DMA_bis_Init();
+      |  ^~~~~~~~~~~~
+      |  DMA_Init
+../Core/Src/main.c: In function '__io_putchar':
+../Core/Src/main.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+   21 | }
+      | ^
+arm-none-eabi-gcc -o "DMA_TP1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Users\hugop\Documents\GitHub\STM32\MASTER_ESET_DMA\DMA_TP1\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_TP1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_TP1.elf
+ 
+arm-none-eabi-size   DMA_TP1.elf 
+arm-none-eabi-objdump -h -S  DMA_TP1.elf  > "DMA_TP1.list"
+   text	   data	    bss	    dec	    hex	filename
+   9992	     12	  33572	  43576	   aa38	DMA_TP1.elf
 Finished building: default.size.stdout
  
 Finished building: DMA_TP1.list
